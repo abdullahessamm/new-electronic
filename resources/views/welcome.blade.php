@@ -7,6 +7,16 @@
 </head>
 
 <style type="text/css">
+
+@keyframes color-animate {
+    0% {
+        color: #ffcc00;
+    }
+    100% {
+        color: #ffffff;
+    }
+}
+
 body {
     background-color: #135ea2;
     color: #eee;
@@ -19,12 +29,23 @@ body {
 }
 
 body * { text-align: center }
+
+.sub-title {
+    animation: color-animate linear;
+    animation-duration: 2000ms;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+
+}
+
 </style>
 
 <body>
     <div class="app">
-        <h2 class="title"> New Electronic </h2>
-        <h5> Comming soon </h5>
+        <h1 class="title"> New Electronic </h1>
+        <h4> <<span class="sub-title">Under development</span> /> </h4>
     </div>
+
 </body>
 </html>
