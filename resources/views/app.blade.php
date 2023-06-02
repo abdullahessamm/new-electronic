@@ -36,16 +36,13 @@ body * { text-align: center }
     animation-iteration-count: infinite;
     animation-direction: alternate;
     animation-fill-mode: forwards;
-
 }
 
 </style>
 
 <body>
-    <div class="app">
-        <h1 class="title"> New Electronic </h1>
-        <h4> <<span class="sub-title">Under development</span> /> </h4>
-    </div>
+    <div id="app"></div>
 
+    <script src="{{ mix('js/app.js') }}"></script>
 </body>
 </html>
