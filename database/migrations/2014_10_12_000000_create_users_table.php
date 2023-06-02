@@ -17,9 +17,9 @@ return new class extends Migration
             $table->smallInteger('id', true, true);
             $table->string('f_name', 50);
             $table->string('l_name', 50);
-            $table->string('username')->unique();
+            $table->string('username', 50)->unique();
             $table->string('email')->unique();
-            $table->string('password');
+            $table->string('password', 60);
             $table->string('abilities');
             $table->rememberToken();
             $table->timestamps();
