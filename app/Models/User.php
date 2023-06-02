@@ -45,8 +45,7 @@ class User extends Authenticatable
     CONST ABILITY_EXPORTS_CREATE  = 'exports:create';
     CONST ABILITY_EXPORTS_UPDATE  = 'exports:update';
     CONST ABILITY_EXPORTS_DELETE  = 'exports:delete';
-
-    /***** START ABILITIES *****/
+    /***** END ABILITIES *****/
 
     /**
      * The attributes that are mass assignable.

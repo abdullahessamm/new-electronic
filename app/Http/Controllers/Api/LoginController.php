@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Api\Users;
+namespace App\Http\Controllers\Api;
 
 use App\Exceptions\Validation\DataValidationException;
 use App\Http\Controllers\Controller;
