@@ -43,4 +43,25 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * get abilities of user
+     *
+     * @return array|false
+     */
+    public function getAbilities()
+    {
+        return explode(',', $this->abilities);
+    }
+
+    /**
+     * set abilities of user
+     *
+     * @param array $abilities
+     * @return void
+     */
+    public function setAbilities(array $abilities)
+    {
+        $this->abilities = implode(',', $abilities);
+    }
 }
