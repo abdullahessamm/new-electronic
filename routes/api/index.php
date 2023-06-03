@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\ExportsController;
 use App\Http\Controllers\Api\ImportsController;
 use App\Http\Controllers\Api\LoginController;
+use App\Http\Controllers\Api\ProfileSettingsController;
 use App\Http\Controllers\Api\UsersController;
 use Illuminate\Support\Facades\Route;
 
@@ -33,4 +34,5 @@ Route::middleware('auth:sanctum')
     // exports
     Route::apiResource('exports', ExportsController::class);
 
+    Route::patch('profile/settings', [ProfileSettingsController::class, 'update']);
 });
