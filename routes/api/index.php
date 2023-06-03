@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\ExportsController;
 use App\Http\Controllers\Api\ImportsController;
 use App\Http\Controllers\Api\LoginController;
 use App\Http\Controllers\Api\UsersController;
@@ -27,6 +28,9 @@ Route::middleware('auth:sanctum')
     ->controller(UsersController::class)
     ->group(__DIR__ . DIRECTORY_SEPARATOR . 'users.php');
 
+    // imports
     Route::apiResource('imports', ImportsController::class);
+    // exports
+    Route::apiResource('exports', ExportsController::class);
 
 });
