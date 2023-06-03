@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\ImportsController;
 use App\Http\Controllers\Api\LoginController;
 use App\Http\Controllers\Api\UsersController;
 use Illuminate\Support\Facades\Route;
@@ -19,7 +20,13 @@ Route::prefix('auth')
 ->controller(LoginController::class)
 ->group(__DIR__ . DIRECTORY_SEPARATOR . 'auth.php');
 
-Route::prefix('users')
-->controller(UsersController::class)
-->middleware('auth:sanctum')
-->group(__DIR__ . DIRECTORY_SEPARATOR . 'users.php');
+Route::middleware('auth:sanctum')
+->group(function () {
+    // users
+    Route::prefix('users')
+    ->controller(UsersController::class)
+    ->group(__DIR__ . DIRECTORY_SEPARATOR . 'users.php');
+
+    Route::apiResource('imports', ImportsController::class);
+
+});
