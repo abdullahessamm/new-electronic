@@ -30,13 +30,15 @@ class User extends Authenticatable
         'exports:create',
         'exports:update',
         'exports:delete',
+        // Statistics page
+        'statistics:show'
     ];
 
     // Users
-    CONST ABILITY_USERS_INDEX   = 'users:index';
-    CONST ABILITY_USERS_CREATE  = 'users:create';
-    CONST ABILITY_USERS_UPDATE  = 'users:update';
-    CONST ABILITY_USERS_DELETE  = 'users:delete';
+    CONST ABILITY_USERS_INDEX        = 'users:index';
+    CONST ABILITY_USERS_CREATE       = 'users:create';
+    CONST ABILITY_USERS_UPDATE       = 'users:update';
+    CONST ABILITY_USERS_DELETE       = 'users:delete';
     // Imports
     CONST ABILITY_IMPORTS_INDEX      = 'imports:index';
     CONST ABILITY_IMPORTS_INDEX_FULL = 'imports:index:full';
@@ -49,6 +51,8 @@ class User extends Authenticatable
     CONST ABILITY_EXPORTS_CREATE     = 'exports:create';
     CONST ABILITY_EXPORTS_UPDATE     = 'exports:update';
     CONST ABILITY_EXPORTS_DELETE     = 'exports:delete';
+    // Statistics page
+    CONST ABILITY_STATISTICS_SHOW    = 'statistics:show';
     /***** END ABILITIES *****/
 
     /**
