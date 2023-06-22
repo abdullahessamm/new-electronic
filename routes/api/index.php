@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\ExportsController;
 use App\Http\Controllers\Api\ImportsController;
 use App\Http\Controllers\Api\LoginController;
 use App\Http\Controllers\Api\ProfileSettingsController;
+use App\Http\Controllers\Api\SparePartsPermitsController;
 use App\Http\Controllers\Api\UsersController;
 use Illuminate\Support\Facades\Route;
 
@@ -33,6 +34,11 @@ Route::middleware('auth:sanctum')
     Route::apiResource('imports', ImportsController::class);
     // exports
     Route::apiResource('exports', ExportsController::class);
+
+    // Spare parts permits
+    Route::prefix('sparePartsPermits')
+    ->controller(SparePartsPermitsController::class)
+    ->group(__DIR__ . DIRECTORY_SEPARATOR . 'sparePartsPermits.php');
 
     Route::patch('profile/settings', [ProfileSettingsController::class, 'update']);
 });
