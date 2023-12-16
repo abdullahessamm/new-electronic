@@ -37,7 +37,12 @@ class User extends Authenticatable
         'sparePartsPermits:update',
         'sparePartsPermits:delete',
         // Statistics page
-        'statistics:show'
+        'statistics:show',
+        // employees
+        'employees:index',
+        'employees:create',
+        'employees:update',
+        'employees:delete',
     ];
 
     // Users
@@ -65,6 +70,11 @@ class User extends Authenticatable
     CONST ABILITY_SPARE_PARTS_PERMITS_DELETE     = 'sparePartsPermits:delete';
     // Statistics page
     CONST ABILITY_STATISTICS_SHOW                = 'statistics:show';
+    // Employees
+    CONST ABILITY_EMPLOYEES_INDEX                =  'employees:index';
+    CONST ABILITY_EMPLOYEES_CREATE               =  'employees:create';
+    CONST ABILITY_EMPLOYEES_UPDATE               =  'employees:update';
+    CONST ABILITY_EMPLOYEES_DELETE               =  'employees:delete';
     /***** END ABILITIES *****/
 
     /**

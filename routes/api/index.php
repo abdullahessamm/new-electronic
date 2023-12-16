@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\EmployeesController;
 use App\Http\Controllers\Api\ExportsController;
 use App\Http\Controllers\Api\ImportsController;
 use App\Http\Controllers\Api\LoginController;
@@ -39,6 +40,11 @@ Route::middleware('auth:sanctum')
     Route::prefix('sparePartsPermits')
     ->controller(SparePartsPermitsController::class)
     ->group(__DIR__ . DIRECTORY_SEPARATOR . 'sparePartsPermits.php');
+
+    // employees
+    Route::prefix('employees')
+    ->controller(EmployeesController::class)
+    ->group(__DIR__ . DIRECTORY_SEPARATOR . 'employees.php');
 
     Route::patch('profile/settings', [ProfileSettingsController::class, 'update']);
 });
