@@ -48,7 +48,7 @@ class EmployeesController extends Controller
         ]);
 
         return $this->apiSuccessResponse([
-            'employee' => $emp
+            'employee' => $emp->refresh()
         ]);
     }
 
