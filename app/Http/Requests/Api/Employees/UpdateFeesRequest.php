@@ -29,6 +29,7 @@ class UpdateFeesRequest extends FormRequest
             'discounts'             => ['array'],
             'discounts.*.amount'    => ['required', 'numeric'],
             'discounts.*.reason'    => ['required', 'string'],
+            'discounts.*.date'      => ['date'],
             'obtain'                => ['boolean']
         ];
     }

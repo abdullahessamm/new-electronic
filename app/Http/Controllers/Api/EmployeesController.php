@@ -37,7 +37,7 @@ class EmployeesController extends Controller
         if (! request()->user()->tokenCan(User::ABILITY_EMPLOYEES_INDEX))
             throw new UnauthorizedException();
 
-        $emp = Employee::with('fees')->find($empId);
+        $emp = Employee::with(['fees', 'attendance'])->find($empId);
 
         if (! $emp)
             throw new NotFoundException(Employee::class, $empId);
@@ -104,6 +104,29 @@ class EmployeesController extends Controller
         return $this->apiSuccessResponse();
     }
 
+    /**
+     * @param integer $empId
+     * @return JsonResponse
+     */
+    public function markDayAttendance(int $empId)
+    {
+        if (! request()->user()->tokenCan(User::ABILITY_EMPLOYEES_UPDATE))
+            throw new UnauthorizedException();
+
+        $emp = Employee::findOrFail($empId);
+        $emp->attendance()->firstOrCreate([
+            'day' => Carbon::create(now()->format('m/d/Y'))
+        ], [
+            'attended_at' => now()
+        ]);
+
+        return $this->apiSuccessResponse();
+    }
+
+    /**
+     * @param integer $empId
+     * @return JsonResponse
+     */
     public function delete(int $empId)
     {
         Employee::where('id', $empId)->delete();

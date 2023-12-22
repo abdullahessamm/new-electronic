@@ -7,4 +7,5 @@ Route::get('{id}', 'show')->where('id', '^[0-9]+$');
 Route::patch('{id}', 'update')->where('id', '^[0-9]+$');
 Route::put('', 'create');
 Route::patch('{id}/fees', 'updateFees')->where('id', '^[0-9]+$');
+Route::patch('{id}/mark-day-attendance', 'markDayAttendance')->where('id', '^[0-9]+$');
 Route::delete('{id}', 'delete')->where('id', '^[0-9]+$');
