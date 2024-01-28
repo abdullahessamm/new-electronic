@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\EmployeesController;
 use App\Http\Controllers\Api\ExportsController;
 use App\Http\Controllers\Api\ImportsController;
 use App\Http\Controllers\Api\LoginController;
+use App\Http\Controllers\Api\MonthlyReportingIncentiveController;
 use App\Http\Controllers\Api\ProfileSettingsController;
 use App\Http\Controllers\Api\SparePartsPermitsController;
 use App\Http\Controllers\Api\UsersController;
@@ -45,6 +46,9 @@ Route::middleware('auth:sanctum')
     Route::prefix('employees')
     ->controller(EmployeesController::class)
     ->group(__DIR__ . DIRECTORY_SEPARATOR . 'employees.php');
+
+    // Monthly Reporting Incentives
+    Route::apiResource('monthly-reporting-incentives', MonthlyReportingIncentiveController::class);
 
     Route::patch('profile/settings', [ProfileSettingsController::class, 'update']);
 });

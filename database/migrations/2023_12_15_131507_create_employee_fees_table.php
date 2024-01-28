@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('employee_id');
             $table->date('month');
-            $table->json('discounts')->default(json_encode([]));
+            $table->json('discounts')->nullable();
             $table->dateTime('obtained_at')->nullable();
 
             $table->foreign('employee_id')
