@@ -65,7 +65,7 @@ class SparePartsPermitsController extends Controller
                 'case_number'   => $request->case_number,
                 'client_name'   => $request->client_name,
                 'description'   => $request->description,
-            
+
             ])
         ]);
     }
@@ -83,7 +83,7 @@ class SparePartsPermitsController extends Controller
             throw new UnauthorizedException();
 
         $sparePartsPermit = SparePartsPermit::findOrFail($id);
-        
+
         $validator = Validator::make($request->all(), [
             'permit_number' => 'string|min:3|max:60',
             'case_number'   => 'string|min:1|max:60',
