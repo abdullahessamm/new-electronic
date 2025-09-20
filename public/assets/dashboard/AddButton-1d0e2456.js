@@ -1,1 +1,0 @@
-import{_ as e,r as n,o as c,c as t,d as s}from"./index-549cefdd.js";const a={},r={class:"bg-color-main d-inline-block p-4 text-white m-0"};function _(i,d){const o=n("font-awesome-icon");return c(),t("div",r,[s(o,{icon:"fa-solid fa-plus"})])}const m=e(a,[["render",_]]);export{m as A};
